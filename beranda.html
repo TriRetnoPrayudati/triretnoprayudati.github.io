@@ -334,7 +334,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p class="m-0">Penjualan mulai 16-22 Januari 2024
+                                    <p class="m-0">Penjualan mulai di bulan Januari 2024
                                     </p>
                                     <div class="chart-area">
                                         <canvas id="myAreaChart"></canvas>
@@ -376,19 +376,19 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p class="m-0">Penjualan mulai 16-22 Januari 2024
+                                    <p class="m-0">Penjualan di bulan Januari 2024
                                     </p>
                                     <div class="chart-area">
-                                        <canvas id="myLineChart"></canvas>
+                                        <canvas id="myBarChart"></canvas>
                                     </div>
                                     <div class="row">
                                         <div class="col-xl-4 col-md-6 mb-4">
-                                            <span style="color: blue; font-size: 24px;">&#9679;</span><span
+                                            <span style="color: #8D7DAB; font-size: 24px;">&#9679;</span><span
                                                 style="color: #000000;" class="text-xs mr-2">
                                                 Minggu ini</span>
                                         </div>
                                         <div class="col-xl-4 col-md-6 mb-4">
-                                            <span style="color: gray; font-size: 24px;">&#9679;</span><span
+                                            <span style="color: #b5c7eb; font-size: 24px;">&#9679;</span><span
                                                 style="color: #000000;" class="text-xs mr-2">
                                                 Minggu lalu</span>
                                         </div>
@@ -396,7 +396,7 @@
                                         <div class="col-xl-4 col-md-6 mb-4" style="padding-top: 2%;">
                                             <i class="fas fa-arrow-down" style="color: #ff0000;"
                                                 class="text-xs mr-2"></i>
-                                            <span style="color: red;" class="text-xs mr-2">2.1% </span><span
+                                            <span style="color: blue;" class="text-xs mr-2">2.1% </span><span
                                                 class="text-xs mr-2">dari minggu
                                                 lalu</span>
                                         </div>
@@ -440,32 +440,63 @@
     <script src="vendor/chart.js/Chart.min.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <script>
-        // Script untuk membuat chart
-        var ctx = document.getElementById('myLineChart').getContext('2d');
-        var myLineChart = new Chart(ctx, {
-            type: 'line',
+        // Script untuk membuat chart bar
+        var ctx = document.getElementById('myBarChart').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',
             data: {
-                labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 4', 'Minggu 5'],
+                labels: ['Minggu 1', 'Minggu 2', 'Minggu 3', 'Minggu 5'],
                 datasets: [{
                     label: 'Paket Layanan Paling Banyak Dipesan',
-                    data: [30, 28, 35, 20, 25], // Data bisa disesuaikan dengan data yang sebenarnya
-                    borderColor: '#e74a3b',
-                    backgroundColor: 'rgba(0, 0, 0, 0)',
-                    borderWidth: 2
+                    data: [30, 28, 19, 15], // Data numerik asli
+                    borderColor: '#f2f0ef',
+                    backgroundColor: function(context) {
+                        var index = context.dataIndex;
+                        return index === 3 ? '#8D7DAB' : '#b5c7eb'; // Minggu 5 merah, lainnya abu-abu
+                    },
+                    borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
+                plugins: {
+                    datalabels: {
+                        display: true,
+                        anchor: 'end',
+                        align: 'bottom',
+                        color: '#ffffff',
+                        font: {
+                            weight: 'bold'
+                        },
+                        formatter: function(value, context) {
+                            // Mengambil label sesuai dengan dataPoints
+                            var dataPoints = ['Paket A', 'Paket B', 'Paket C', 'Paket C'];
+                            return dataPoints[context.dataIndex];
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                // Mengubah format label tooltip sesuai kebutuhan
+                                return `Jumlah: ${context.raw}`;
+                            }
+                        }
+                    }
+                },
                 scales: {
                     y: {
                         beginAtZero: true
                     }
                 }
-            }
+            },
+            plugins: [ChartDataLabels]
         });
     </script>
+    
 </body>
-
 </html>

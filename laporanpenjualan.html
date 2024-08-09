@@ -52,7 +52,7 @@
         }
 
         .filter-container select {
-            width: 120px;
+            width: 80px;
         }
 
         .filter-container button {
@@ -292,29 +292,36 @@
                     <div class="card shadow mb-4">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 mb-4" style="padding-right: 4%;">
-                                    <div class="filter-container">
-                                        <div class="date-range-picker-wrapper">
-                                            <div class="prev">&lt;</div>
-                                            <input type="text" name="daterange" id="daterange" readonly />
-                                            <div class="next">&gt;</div>
+                                <div class="col-lg-7 col-md-6 mb-4 mt-4" style="padding-bottom: 2%;">
+                                    <form id="filterForm">
+                                        <div class="row mt-3 mb-3">
+                                            <div class="col-md-3">
+                                                <div class="form-group mb-3">
+                                                    <label class="mb-2">Dari Tanggal</label>
+                                                    <input type="date" id="from_date" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group mb-3">
+                                                    <label class="mb-2">Sampai Tanggal</label>
+                                                    <input type="date" id="to_date" class="form-control" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group mb-3">
+                                                    <button type="button" id="resetButton"
+                                                        class="btn btn-secondary text-white btn-block"
+                                                        style="margin-top:30px">Reset</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
-                                <div class="col-lg-7 col-md-6 mb-4">
-                                    <div class="card" style="margin-left: 31%;">
-                                        <div class="filter-container">
+
+                                <div class="col-lg-4 col-md-6 mb-4" style="padding-top: 6%; margin-left: auto;">
+                                    <div class="card">
+                                        <div class="filter-container" style="margin-left: 20%;">
                                             <img src="logo/filter.png" alt="Filter">
-                                            <select id="filterNama" onchange="filterTable()">
-                                                <option value="">Nama</option>
-                                                <option value="Indy Rizki">Indy Rizki</option>
-                                                <option value="Alfatih">Alfatih</option>
-                                                <option value="Dian">Dian</option>
-                                                <option value="Nino Sebastian">Nino Sebastian</option>
-                                                <option value="Aliyah F">Aliyah F</option>
-                                                <option value="Bordis Sutisto">Bordis Sutisto</option>
-                                                <option value="Nany y">Nany y</option>
-                                            </select>
                                             <select id="filterDeskripsi" onchange="filterTable()">
                                                 <option value="">Jenis</option>
                                                 <option value="Daily Cleaning">Daily Cleaning</option>
@@ -333,7 +340,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                
 
                             <div class="table-responsive" style="padding-top: 2%;">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -421,13 +428,26 @@
                                     var filterNama = document.getElementById('filterNama').value.toLowerCase();
                                     var filterDeskripsi = document.getElementById('filterDeskripsi').value.toLowerCase();
                                     var filterStatus = document.getElementById('filterStatus').value.toLowerCase();
+                                    var fromDateInput = document.getElementById('from_date').value;
+                                    var toDateInput = document.getElementById('to_date').value;
+
+                                    // Parse input dates
+                                    var fromDate = fromDateInput ? new Date(fromDateInput) : null;
+                                    var toDate = toDateInput ? new Date(toDateInput) : null;
+
                                     var table = document.getElementById('dataTable');
                                     var rows = table.getElementsByTagName('tr');
 
                                     for (var i = 1; i < rows.length; i++) {
-                                        var nama = rows[i].getElementsByTagName('td')[2].textContent.toLowerCase();
-                                        var deskripsi = rows[i].getElementsByTagName('td')[3].textContent.toLowerCase();
-                                        var status = rows[i].getElementsByTagName('td')[5].textContent.toLowerCase();
+                                        var cells = rows[i].getElementsByTagName('td');
+                                        var nama = cells[2].textContent.toLowerCase();
+                                        var deskripsi = cells[3].textContent.toLowerCase();
+                                        var status = cells[5].textContent.toLowerCase();
+
+                                        // Parse date from table
+                                        var tanggalText = cells[1].textContent.trim();
+                                        var tanggal = parseDate(tanggalText);
+
                                         var match = true;
 
                                         if (filterNama && nama.indexOf(filterNama) === -1) {
@@ -439,21 +459,40 @@
                                         if (filterStatus && status.indexOf(filterStatus) === -1) {
                                             match = false;
                                         }
+                                        if (fromDate && tanggal < fromDate) {
+                                            match = false;
+                                        }
+                                        if (toDate && tanggal > toDate) {
+                                            match = false;
+                                        }
 
                                         rows[i].style.display = match ? '' : 'none';
                                     }
+                                }
+
+                                function parseDate(dateString) {
+                                    // Convert date string to Date object (Assuming format is "DD MMMM YYYY")
+                                    var parts = dateString.split(' ');
+                                    var day = parseInt(parts[0], 10);
+                                    var month = new Date(Date.parse(parts[1] + " 1, 2022")).getMonth(); // Month name to number
+                                    var year = parseInt(parts[2], 10);
+                                    return new Date(year, month, day);
                                 }
 
                                 function resetFilters() {
                                     document.getElementById('filterNama').value = "";
                                     document.getElementById('filterDeskripsi').value = "";
                                     document.getElementById('filterStatus').value = "";
+                                    document.getElementById('from_date').value = "";
+                                    document.getElementById('to_date').value = "";
                                     filterTable();
                                 }
 
                                 document.getElementById('filterNama').addEventListener('change', filterTable);
                                 document.getElementById('filterDeskripsi').addEventListener('change', filterTable);
                                 document.getElementById('filterStatus').addEventListener('change', filterTable);
+                                document.getElementById('from_date').addEventListener('change', filterTable);
+                                document.getElementById('to_date').addEventListener('change', filterTable);
                             </script>
                         </div>
                     </div>
@@ -496,55 +535,63 @@
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script>
-        $(function () {
-            let currentStartDate = moment('2024-01-01');
-            let currentEndDate = moment('2024-01-31');
+        // Filter berdasarkan tanggal secara otomatis
+        document.getElementById('from_date').addEventListener('change', filterTable);
+        document.getElementById('to_date').addEventListener('change', filterTable);
 
-            $('#daterange').daterangepicker({
-                opens: 'center',
-                startDate: currentStartDate,
-                endDate: currentEndDate,
-                locale: {
-                    format: 'DD MMMM YYYY'
-                }
-            }, function (start, end, label) {
-                currentStartDate = start;
-                currentEndDate = end;
-                filterTableByDate(start, end);
-            });
+        function filterTable() {
+            let fromDate = document.getElementById('from_date').value;
+            let toDate = document.getElementById('to_date').value;
 
-            $('.prev').click(function () {
-                changeMonth(-1);
-            });
+            if (fromDate && toDate) {
+                let rows = document.querySelectorAll('#dataTable tbody tr');
+                rows.forEach(row => {
+                    let dateCell = row.cells[1].textContent.trim();
+                    let dateParts = dateCell.split(' ');
+                    let dateString = `${dateParts[2]}-${getMonthFromName(dateParts[1])}-${dateParts[0].padStart(2, '0')}`;
+                    let transactionDate = new Date(dateString);
 
-            $('.next').click(function () {
-                changeMonth(1);
-            });
+                    let from = new Date(fromDate);
+                    let to = new Date(toDate);
+                    to.setHours(23, 59, 59, 999);
 
-            function changeMonth(offset) {
-                currentStartDate.add(offset, 'months');
-                currentEndDate.add(offset, 'months');
-
-                $('#daterange').data('daterangepicker').setStartDate(currentStartDate);
-                $('#daterange').data('daterangepicker').setEndDate(currentEndDate);
-
-                filterTableByDate(currentStartDate, currentEndDate);
-            }
-
-            function filterTableByDate(start, end) {
-                $('#dataTable tbody tr').each(function () {
-                    let dateText = $(this).find('td:nth-child(2)').text();
-                    let date = moment(dateText, 'DD MMMM YYYY');
-                    if (date.isBetween(start, end, 'days', '[]')) {
-                        $(this).show();
+                    if (transactionDate >= from && transactionDate <= to) {
+                        row.style.display = '';
                     } else {
-                        $(this).hide();
+                        row.style.display = 'none';
                     }
                 });
             }
+        }
 
-            // Initial filtering
-            filterTableByDate(currentStartDate, currentEndDate);
+        function getMonthFromName(monthName) {
+            const months = {
+                'Januari': '01',
+                'Februari': '02',
+                'Maret': '03',
+                'April': '04',
+                'Mei': '05',
+                'Juni': '06',
+                'Juli': '07',
+                'Agustus': '08',
+                'September': '09',
+                'Oktober': '10',
+                'November': '11',
+                'Desember': '12'
+            };
+            return months[monthName];
+        }
+
+        // Tombol reset untuk mengembalikan tabel ke kondisi semula
+        document.getElementById('resetButton').addEventListener('click', function () {
+            // Reset table
+            let rows = document.querySelectorAll('#dataTable tbody tr');
+            rows.forEach(row => {
+                row.style.display = '';
+            });
+
+            // Reset form
+            document.getElementById('filterForm').reset();
         });
     </script>
 
