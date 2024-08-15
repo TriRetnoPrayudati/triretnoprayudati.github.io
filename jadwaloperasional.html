@@ -19,12 +19,10 @@
             rel="stylesheet">
 
         <link href="css/sb-admin-2.min.css" rel="stylesheet">
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-            integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
-            crossorigin="anonymous">
+
         <link href="vendor/datatables/dataTables.bootstrap4.min.css"
             rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 
     </head>
 
@@ -277,10 +275,23 @@
                     <div class="container-fluid">
                         <div
                             class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Manajemen
-                                Pelanggan</h1>
+
+                        </div>
+                        <div
+                            class="box d-flex flex-row justify-content-between">
+                            <div class="left">
+                                <h1 class="h3 mb-0 text-gray-800">Jadwal
+                                    Operasional</h1>
+                            </div>
+                            <div class="right">
+                                <a href="tambahjadwal.html"
+                                    class="btn btn-primary shadow-sm">
+                                    Setting
+                                    Jadwal</a>
+                            </div>
                         </div>
 
+                        <br><br>
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -289,35 +300,124 @@
                                         cellspacing="0">
                                         <thead>
                                             <tr>
-                                                <th>ID Users</th>
-                                                <th>Nama Users</th>
-                                                <th>Email</th>
-                                                <th>No. Handphone</th>
-                            
-                                                <th>Status Users</th>
+                                                <th>No</th>
+                                                <th>Hari</th>
+                                                <th>Tanggal</th>
+                                                <th>Jam Buka</th>
+                                                <th>Jam Tutup</th>
+                                                <th>Catatan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td>Asep Septian</td>
-                                                <td>aseps@mail.com</td>
-                                                <td>0812121212</td>
-                                                
-                                                <td
-                                                    style="color: green;">Aktif</td>
-                                                    <td
-                                                    style="width: 200px;">
+                                                <td>Senin</td>
+                                                <td>17 Jun 2024</td>
+                                                <td>09:00</td>
+                                                <td>19:00</td>
+                                                <td>Lebaran</td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-sm"
+                                                        data-toggle="modal"
+                                                        data-target="#updateModal"
+                                                        style="color: rgb(0, 85, 128);background-color: rgba(0, 255, 255, 0.307);">
+                                                        <i class="bi bi-pen"></i>
+                                                    </button>
+                                                    <div class="modal fade"
+                                                        id="updateModal"
+                                                        tabindex="-1"
+                                                        role="dialog"
+                                                        aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div
+                                                            class="modal-dialog"
+                                                            role="document">
+                                                            <div
+                                                                class="modal-content">
+                                                                <div
+                                                                    class="modal-header">
+                                                                    <h5
+                                                                        class="modal-title"
+                                                                        id="exampleModalLabel">
+                                                                        Update</h5>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="close"
+                                                                        data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                        <span
+                                                                            aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body">
+                                                                    <form method="post" enctype="multipart/form-data">
+                                                                        <div class="row">
+                                                                            
+                                                                            <div class="col-xl-12 col-md-6 mb-4">
+                                                                                <label>Hari</label>
+                                                                               <select class="form-control">
+                                                                                <option value="Senin">Senin</option>
+                                                                                <option value="Selasa">Selasa</option>
+                                                                                <option value="Rabu">Rabu</option>
+                                                                                <option value="Kamis">Kamis</option>
+                                                                                <option value="Jumat">Jumat</option>
+                                                                                <option value="Sabtu">Sabtu</option>
+                                                                                <option value="Minggu">Minggu</option>
+                                                                               </select>
+                                                                            </div>
+                                                                            <div class="col-xl-12 col-md-6 mb-4">
+                                                                                <label>Tanggal</label>
+                                                                                <input type="date" required class="form-control" name="" placeholder="">
+                                                                            </div>
+                                                                            
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12 col-md-6 mb-4">
+                                                                                <label>Jam Buka</label>
+                                                                                <input type="time" required class="form-control" name="" placeholder="">
+                                                                            </div>
+                                                                            <div class="col-xl-12 col-md-6 mb-4">
+                                                                                <label>Jam Tutup</label>
+                                                                                <input type="time" required class="form-control" name="" placeholder="">
+                                                                            </div>
+                                                                            <div class="col-xl-12 col-md-6 mb-4">
+                                                                                <label>Catatan</label>
+                                                                                <textarea class="form-control" name="" placeholder=""></textarea>
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                    </form>
+                                                                    </form>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-footer">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-secondary"
+                                                                        data-dismiss="modal">Tutup</button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-primary"
+                                                                        data-toggle="modal"
+                                                                        data-target="#suksesModal">
+                                                                        Simpan
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
                                                     <button type="button"
                                                         class="btn btn-danger btn-sm"
                                                         data-toggle="modal"
-                                                        data-target="#blokirModal" style="color: #FF8F0D;background-color: rgba(255, 140, 0, 0.439);">
-                                                        <i class="bi bi-ban"></i>
+                                                        data-target="#exampleModal">
+                                                        <i class="bi bi-trash"></i>
                                                     </button>
                                                     <div class="modal fade"
-                                                        id="blokirModal"
+                                                        id="exampleModal"
                                                         tabindex="-1"
                                                         role="dialog"
                                                         aria-labelledby="exampleModalLabel"
@@ -346,7 +446,7 @@
                                                                     class="modal-body">
                                                                     Apakah yakin
                                                                     anda akan
-                                                                    Memblokir
+                                                                    menghapus
                                                                     data ini?
                                                                 </div>
                                                                 <div
@@ -359,68 +459,7 @@
                                                                         type="button"
                                                                         class="btn btn-danger"
                                                                         data-toggle="modal"
-                                                                        data-target="#successBlokirModal" style="color: #FF8F0D;background-color: rgba(255, 140, 0, 0.439);">
-                                                                        Blokir
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <button type="button"
-                                                        class="btn btn-danger btn-sm"
-                                                        data-toggle="modal"
-                                                        data-target="#deleteModal">
-                                                        <i
-                                                            class="bi bi-trash"></i>
-                                                    </button>
-                                                    <div class="modal fade"
-                                                        id="deleteModal"
-                                                        tabindex="-1"
-                                                        role="dialog"
-                                                        aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
-                                                        <div
-                                                            class="modal-dialog"
-                                                            role="document">
-                                                            <div
-                                                                class="modal-content">
-                                                                <div
-                                                                    class="modal-header">
-                                                                    <h5
-                                                                        class="modal-title"
-                                                                        id="exampleModalLabel">
-                                                                        Konfirmasi</h5>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="close"
-                                                                        data-dismiss="modal"
-                                                                        aria-label="Close">
-                                                                        <span
-                                                                            aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="modal-body">
-                                                                    Apakah
-                                                                    yakin
-                                                                    anda
-                                                                    akan
-                                                                    menghapus
-                                                                    data
-                                                                    ini?
-                                                                </div>
-                                                                <div
-                                                                    class="modal-footer">
-                                                                    <button
-                                                                        type="button"
-                                                                        class="btn btn-secondary"
-                                                                        data-dismiss="modal">Tutup</button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="btn btn-danger"
-                                                                        data-toggle="modal"
-                                                                        data-target="#successDeleteModal">
+                                                                        data-target="#deleteModal">
                                                                         Hapus
                                                                     </button>
                                                                 </div>
@@ -429,139 +468,12 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Puja Sera Kasih</td>
-                                                <td>pujaser@mail.com</td>
-                                                <td>0812121213</td>
-                                                
-                                                <td style="color: red;">Non
-                                                    Aktif</td>
-                                                <td
-                                                    style="width: 200px;">
-
-                                                    <button type="button"
-                                                        class="btn btn-danger btn-sm"
-                                                        data-toggle="modal"
-                                                        data-target="#blokirModal" style="color: #FF8F0D;background-color: rgba(255, 140, 0, 0.439);">
-                                                        <i class="bi bi-ban"></i>
-                                                    </button>
-                                                    <div class="modal fade"
-                                                        id="blokirModal"
-                                                        tabindex="-1"
-                                                        role="dialog"
-                                                        aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
-                                                        <div
-                                                            class="modal-dialog"
-                                                            role="document">
-                                                            <div
-                                                                class="modal-content">
-                                                                <div
-                                                                    class="modal-header">
-                                                                    <h5
-                                                                        class="modal-title"
-                                                                        id="exampleModalLabel">
-                                                                        Konfirmasi</h5>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="close"
-                                                                        data-dismiss="modal"
-                                                                        aria-label="Close">
-                                                                        <span
-                                                                            aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="modal-body">
-                                                                    Apakah yakin
-                                                                    anda akan
-                                                                    Memblokir
-                                                                    data ini?
-                                                                </div>
-                                                                <div
-                                                                    class="modal-footer">
-                                                                    <button
-                                                                        type="button"
-                                                                        class="btn btn-secondary"
-                                                                        data-dismiss="modal">Tutup</button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="btn btn-danger"
-                                                                        data-toggle="modal"
-                                                                        data-target="#successBlokirModal" style="color: #FF8F0D;background-color: rgba(255, 140, 0, 0.439);">
-                                                                        Blokir
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <button type="button"
-                                                        class="btn btn-danger btn-sm"
-                                                        data-toggle="modal"
-                                                        data-target="#deleteModal">
-                                                        <i
-                                                            class="bi bi-trash"></i>
-                                                    </button>
-                                                    <div class="modal fade"
-                                                        id="deleteModal"
-                                                        tabindex="-1"
-                                                        role="dialog"
-                                                        aria-labelledby="exampleModalLabel"
-                                                        aria-hidden="true">
-                                                        <div
-                                                            class="modal-dialog"
-                                                            role="document">
-                                                            <div
-                                                                class="modal-content">
-                                                                <div
-                                                                    class="modal-header">
-                                                                    <h5
-                                                                        class="modal-title"
-                                                                        id="exampleModalLabel">
-                                                                        Konfirmasi</h5>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="close"
-                                                                        data-dismiss="modal"
-                                                                        aria-label="Close">
-                                                                        <span
-                                                                            aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                    class="modal-body">
-                                                                    Apakah
-                                                                    yakin
-                                                                    anda
-                                                                    akan
-                                                                    menghapus
-                                                                    data
-                                                                    ini?
-                                                                </div>
-                                                                <div
-                                                                    class="modal-footer">
-                                                                    <button
-                                                                        type="button"
-                                                                        class="btn btn-secondary"
-                                                                        data-dismiss="modal">Tutup</button>
-                                                                    <button
-                                                                        type="button"
-                                                                        class="btn btn-danger"
-                                                                        data-toggle="modal"
-                                                                        data-target="#successDeleteModal">
-                                                                        Hapus
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
+                                           
                                         </tbody>
                                     </table>
+                                    <button type="button" class="btn btn"
+                                        style="background-color: rgb(214, 214, 214);color: white;"
+                                        onclick="history.back();">Kembali</button>
                                 </div>
                             </div>
                         </div>
@@ -582,8 +494,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title"
                             id="exampleModalLabel">Konfirmasi</h5>
-                        <button class="close" type="button"
-                            data-dismiss="modal"
+                        <button class="close" type="button" data-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -599,44 +510,15 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="successBlokirModal" tabindex="-1"
-            role="dialog"
-            aria-labelledby="deleteModalLabel"
+        
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+            aria-labelledby="suksesModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--  -->
-                        <button type="button" class="close"
-                            data-dismiss="modal"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body text-center">
-                        <!-- Ganti tanda centang dengan GIF -->
-                        <img src="img/card7.png" alt="Sukses"
-                            style="width: 100px; height: 100px;">
-                        <br><br>
-                        <p>Sukses Terblokir</p>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <a href="pelanggan.html"
-                            class="btn btn-primary">OK</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="modal fade" id="successDeleteModal" tabindex="-1"
-            role="dialog"
-            aria-labelledby="deleteModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!--  -->
-                        <button type="button" class="close"
-                            data-dismiss="modal"
+                        <button type="button" class="close" data-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -649,12 +531,13 @@
                         <p>Sukses Terhapus</p>
                     </div>
                     <div class="modal-footer justify-content-center">
-                        <a href="pelanggan.html"
+                        <a href="jadwaloperasional.html"
                             class="btn btn-primary">OK</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="modal fade" id="suksesModal" tabindex="-1" role="dialog"
             aria-labelledby="suksesModalLabel"
             aria-hidden="true">
@@ -662,8 +545,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <!--  -->
-                        <button type="button" class="close"
-                            data-dismiss="modal"
+                        <button type="button" class="close" data-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -682,14 +564,15 @@
                 </div>
             </div>
         </div>
+        
+    </div>
 
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
         <script src="js/sb-admin-2.min.js"></script>
         <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-        <script
-            src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
         <script src="js/demo/datatables-demo.js"></script>
 
     </body>

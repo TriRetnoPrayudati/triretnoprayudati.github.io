@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content>
+        <meta name="author" content>
 
-    <title>Layanan Kebersihan</title>
+        <title>Layanan Kebersihan</title>
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <style>
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+            type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+            integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd"
+            crossorigin="anonymous">
+        <style>
         .filter-container {
             display: flex;
             align-items: center;
@@ -57,294 +64,815 @@
             font-size: 16px;
         }
     </style>
-</head>
+    </head>
 
-<body id="page-top">
-    <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="beranda.html">
-                <div class="sidebar-brand-icon rotate-n-15"></div>
-                <div class="sidebar-brand-text mx-3">Admin</div>
-            </a>
-
-            <hr class="sidebar-divider my-0">
-
-            <li class="nav-item">
-                <a class="nav-link" href="beranda.html">
-                    <img src="logo/dashboard.png">
-                    <span>Dashboard</span></a>
-            </li>
-
-            <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <img src="logo/menu.png">
-                    <span>Manajemen</span>
+    <body id="page-top">
+        <div id="wrapper">
+            <ul
+                class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+                id="accordionSidebar">
+                <a
+                    class="sidebar-brand d-flex align-items-center justify-content-center"
+                    href="beranda.html">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3">Admin</div>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="layanankebersihan.html">Layanan Kebersihan</a>
-                        <a class="collapse-item" href="operasional.html">Operasional</a>
-                        <a class="collapse-item" href="promo.html">Promo dan diskon</a>
-                        <a class="collapse-item" href="rating.html">Rating dan ulasan</a>
-                        <a class="collapse-item" href="pelanggan.html">Pelanggan</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="daftaradmin.html">
-                    <img src="logo/user.png">
-                    <span>Manajemen Tim</span></a>
-            </li>
 
-            <hr class="sidebar-divider">
+                <hr class="sidebar-divider my-0">
 
-            <div class="sidebar-heading">
-                Pages
-            </div>
-            <li class="nav-item">
-                <a class="nav-link" href="daftarpesanan.html">
-                    <img src="logo/shop.png">
-                    <span>Daftar Pesanan</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="jadwalpembersihan.html">
-                    <img src="logo/kalender.png">
-                    <span style="font-size: 12px;">Daftar Jadwal Pembersihan</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="laporanpenjualan.html">
-                    <img src="logo/card.png">
-                    <span>Laporan Penjualan</span></a>
-            </li>
-            <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link" href="pengaturan.html">
-                    <img src="logo/gear.png">
-                    <span>Pengaturan</span></a>
-            </li>
-            <li class="nav-item" style="padding-top: 500px;">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <img src="logo/keluar.png">
-                    <span>Keluar</span></a>
-            </li>
-        </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="beranda.html">
+                        <img src="logo/dashboard.png">
+                        <span>Dashboard</span></a>
+                </li>
 
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <nav class="navbar navbar-expand navbar-light bg-primary topbar mb-4 static-top shadow">
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small rounded" placeholder="Search"
-                                aria-label="Search" aria-describedby="basic-addon2">
+                <hr class="sidebar-divider">
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#"
+                        data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <img src="logo/menu.png">
+                        <span>Manajemen</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse"
+                        aria-labelledby="headingTwo"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item"
+                                href="layanankebersihan.html">Layanan
+                                Kebersihan</a>
+                            <a class="collapse-item"
+                                href="operasional.html">Operasional</a>
+                            <a class="collapse-item" href="promo.html">Promo dan
+                                diskon</a>
+                            <a class="collapse-item" href="rating.html">Rating
+                                dan ulasan</a>
+                            <a class="collapse-item"
+                                href="pelanggan.html">Pelanggan</a>
                         </div>
-                    </form>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="daftaradmin.html">
+                        <img src="logo/user.png">
+                        <span>Manajemen Tim</span></a>
+                </li>
 
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
+                <hr class="sidebar-divider">
+
+                <div class="sidebar-heading">
+                    Pages
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="daftarpesanan.html">
+                        <img src="logo/shop.png">
+                        <span>Daftar Pesanan</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="jadwalpembersihan.html">
+                        <img src="logo/kalender.png">
+                        <span style="font-size: 12px;">Daftar Jadwal
+                            Pembersihan</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="laporanpenjualan.html">
+                        <img src="logo/card.png">
+                        <span>Laporan Penjualan</span></a>
+                </li>
+                <hr class="sidebar-divider">
+                <li class="nav-item">
+                    <a class="nav-link" href="pengaturan.html">
+                        <img src="logo/gear.png">
+                        <span>Pengaturan</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal"
+                        data-target="#logoutModal">
+                        <img src="logo/keluar.png">
+                        <span>Keluar</span></a>
+                </li>
+            </ul>
+
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+                    <nav
+                        class="navbar navbar-expand navbar-light bg-primary topbar mb-4 static-top shadow">
+                        <button id="sidebarToggleTop"
+                            class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+
+                        <form
+                            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text"
+                                    class="form-control bg-light border-0 small rounded"
+                                    placeholder="Search"
+                                    aria-label="Search"
+                                    aria-describedby="basic-addon2">
+                            </div>
+                        </form>
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                <a class="nav-link dropdown-toggle" href="#"
+                                    id="searchDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </a>
+                                <div
+                                    class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                    aria-labelledby="searchDropdown">
+                                    <form
+                                        class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text"
+                                                class="form-control bg-light border-0 small"
+                                                placeholder="Search for..."
+                                                aria-label="Search"
+                                                aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary"
+                                                    type="button">
+                                                    <i
+                                                        class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+
+                            <li class="nav-item dropdown no-arrow mx-1">
+                                <a class="nav-link dropdown-toggle" href="#"
+                                    id="alertsDropdown" role="button"
+                                    data-toggle="modal"
+                                    data-target="#notificationsModal">
+                                    <i class="fas fa-bell fa-fw"></i>
+                                    <span
+                                        class="badge badge-danger badge-counter">3+</span>
+                                </a>
+                            </li>
+                            <!-- modal notif -->
+                            <div class="modal fade" id="notificationsModal"
+                                tabindex="-1" role="dialog"
+                                aria-labelledby="notificationsModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-xl"
+                                    role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title"
+                                                id="notificationsModalLabel"><b>Notifikasi</b></h5>
+                                            <button type="button" class="close"
+                                                data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span
+                                                    aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="modal" data-target="#notificationsModal">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <span class="badge badge-danger badge-counter">3+</span>
-                            </a>
-                        </li>
-                        <!-- modal notif -->
-                        <div class="modal fade" id="notificationsModal" tabindex="-1" role="dialog"
-                            aria-labelledby="notificationsModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-xl" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="notificationsModalLabel"><b>Notifikasi</b></h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="list-group">
-                                            <div class="list-group-item border-left-primary">
-                                                <p class="mb-1"><strong>Pesanan Baru Diterima</strong></p>
-                                                <p class="mb-1">Anda telah menerima pesanan baru dari Reny Anggraeni.
-                                                    Silakan cek detail pesanan
-                                                    di Daftar Pesanan.</p>
-                                                <small>27 Januari 2024 | 15:00</small>
-                                            </div>
-                                            <div class="list-group-item border-left-primary">
-                                                <p class="mb-1"><strong>Pembatalan Pesanan</strong></p>
-                                                <p class="mb-1">Pesanan dari M Fadlan untuk tanggal 27 Januari 2024
-                                                    telah dibatalkan.</p>
-                                                <small>27 Januari 2024 | 11:40</small>
-                                            </div>
-                                            <div class="list-group-item border-left-primary">
-                                                <p class="mb-1"><strong>Pendaftaran Akun Baru</strong></p>
-                                                <p class="mb-1">Seorang Akun baru telah mendaftar dengan nama Asep
-                                                    Septian. Silakan cek di
-                                                    daftar Manajemen Pelanggan.</p>
-                                                <small>26 Januari 2024 | 12:00</small>
-                                            </div>
-                                            <div class="list-group-item border-left-primary">
-                                                <p class="mb-1"><strong>Pesanan Baru Diterima</strong></p>
-                                                <p class="mb-1">Anda telah menerima pesanan baru dari Nuri. Silakan cek
-                                                    detail pesanan di Daftar
-                                                    Pesanan.</p>
-                                                <small>26 Januari 2024 | 09:00</small>
+                                        <div class="modal-body">
+                                            <div class="list-group">
+                                                <div
+                                                    class="list-group-item border-left-primary">
+                                                    <p
+                                                        class="mb-1"><strong>Pesanan
+                                                            Baru
+                                                            Diterima</strong></p>
+                                                    <p class="mb-1">Anda telah
+                                                        menerima pesanan baru
+                                                        dari Reny Anggraeni.
+                                                        Silakan cek detail
+                                                        pesanan
+                                                        di Daftar Pesanan.</p>
+                                                    <small>27 Januari 2024 |
+                                                        15:00</small>
+                                                </div>
+                                                <div
+                                                    class="list-group-item border-left-primary">
+                                                    <p
+                                                        class="mb-1"><strong>Pembatalan
+                                                            Pesanan</strong></p>
+                                                    <p class="mb-1">Pesanan dari
+                                                        M Fadlan untuk tanggal
+                                                        27 Januari 2024
+                                                        telah dibatalkan.</p>
+                                                    <small>27 Januari 2024 |
+                                                        11:40</small>
+                                                </div>
+                                                <div
+                                                    class="list-group-item border-left-primary">
+                                                    <p
+                                                        class="mb-1"><strong>Pendaftaran
+                                                            Akun
+                                                            Baru</strong></p>
+                                                    <p class="mb-1">Seorang Akun
+                                                        baru telah mendaftar
+                                                        dengan nama Asep
+                                                        Septian. Silakan cek di
+                                                        daftar Manajemen
+                                                        Pelanggan.</p>
+                                                    <small>26 Januari 2024 |
+                                                        12:00</small>
+                                                </div>
+                                                <div
+                                                    class="list-group-item border-left-primary">
+                                                    <p
+                                                        class="mb-1"><strong>Pesanan
+                                                            Baru
+                                                            Diterima</strong></p>
+                                                    <p class="mb-1">Anda telah
+                                                        menerima pesanan baru
+                                                        dari Nuri. Silakan cek
+                                                        detail pesanan di Daftar
+                                                        Pesanan.</p>
+                                                    <small>26 Januari 2024 |
+                                                        09:00</small>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <li class="nav-item ">
+                                <a class="nav-link " href="profile.html">
+                                    <img class="img-profile"
+                                        style="border-radius: 10px;"
+                                        src="img/profil.jpeg">
+                                    <span class="ml-2 d-none d-lg-inline small"
+                                        style="color: white;">Tari
+                                        Admin</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="container-fluid">
+                        <div
+                            class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">Manajemen Layanan
+                                Kebersihan</h1>
                         </div>
+                        <div
+                            class="box d-flex flex-row justify-content-between">
+                            <div class="right">
+                                <a href="layanankebersihan.html"
+                                    class="btn btn-warning">Master Layanan
+                                    Kebersihan</a>
+                                <a href="paketkebersihan.html" class="btn btn"
+                                    style="background-color: wheat;color: black;">Paket
+                                    Layanan Kebersihan</a>
+                            </div>
+                            <div class="left">
+                                <a href="tambahlayanankebersihan.html"
+                                    class="btn btn-primary">Tambah Master
+                                    Layanan
+                                    Kebersihan</a>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <div class="card"
+                                    style="margin-left: 51%; width: 49%;">
+                                    <div class="filter-container"
+                                        style="padding: 1px;">
+                                        <img src="logo/filter.png" alt="Filter">
+                                        <select id="filterNama"
+                                            onchange="filterTable()">
+                                            <option value>Nama</option>
+                                            <option
+                                                value="Pembersihan Ventilasi">Pembersihan
+                                                Ventilasi</option>
+                                            <option value="Sapu Lantai">Sapu
+                                                Lantai</option>
+                                            <!-- Tambahkan opsi lainnya jika diperlukan -->
+                                        </select>
+                                        <select id="filterDeskripsi"
+                                            onchange="filterTable()">
+                                            <option value>Deskripsi</option>
+                                            <option
+                                                value="Layanan Pembersih">Layanan
+                                                Pembersih</option>
+                                            <!-- Tambahkan opsi lainnya jika diperlukan -->
+                                        </select>
+                                        <select id="filterStatus"
+                                            onchange="filterTable()">
+                                            <option value>Status</option>
+                                            <option value="Aktif">Aktif</option>
+                                            <option
+                                                value="Non-Aktif">Non-Aktif</option>
+                                            <!-- Tambahkan opsi lainnya jika diperlukan -->
+                                        </select>
+                                        <button onclick="resetFilters()">&#8634;
+                                            Reset</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive"
+                                    style="padding-top: 2%;">
+                                    <table class="table table-bordered"
+                                        id="dataTable" width="100%"
+                                        cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nama Jasa</th>
+                                                <th>Deskripsi Jasa</th>
+                                                <th>Harga Jasa</th>
+                                                <th>Status Jasa</th>
+                                                <th>Gambar Jasa</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>J1</td>
+                                                <td>Pembersihan Ventilasi</td>
+                                                <td>Layanan Pembersih</td>
+                                                <td>10.000</td>
+                                                <td
+                                                    style="color: green;">Aktif</td>
+                                                <td>Gambar_1.png</td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-sm"
+                                                        data-toggle="modal"
+                                                        data-target="#updateModal"
+                                                        style="color: rgb(0, 85, 128);background-color: rgba(0, 255, 255, 0.307);">
+                                                        <i
+                                                            class="bi bi-pen"></i>
+                                                    </button>
+                                                    <div class="modal fade"
+                                                        id="updateModal"
+                                                        tabindex="-1"
+                                                        role="dialog"
+                                                        aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div
+                                                            class="modal-dialog"
+                                                            role="document">
+                                                            <div
+                                                                class="modal-content">
+                                                                <div
+                                                                    class="modal-header">
+                                                                    <h5
+                                                                        class="modal-title"
+                                                                        id="exampleModalLabel">
+                                                                        Update</h5>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="close"
+                                                                        data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                        <span
+                                                                            aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body">
+                                                                    <form
+                                                                        method="post"
+                                                                        enctype="multipart/form-data">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Nama
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="nama_jasa"
+                                                                                placeholder>
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Deskripsi
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="deskripsi_jasa"
+                                                                                placeholder>
+                                                                        </div>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Harga
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="harga_jasa"
+                                                                                placeholder>
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Pilih
+                                                                                Status
+                                                                                Jasa</label>
+                                                                            <select
+                                                                                class="form-control"
+                                                                                name="status_jasa">
+                                                                                <option
+                                                                                    value>Pilih
+                                                                                    Status
+                                                                                    Jasa</option>
+                                                                                <option
+                                                                                    value="aktif">Aktif</option>
+                                                                                <option
+                                                                                    value="non_aktif">Non
+                                                                                    -
+                                                                                    Aktif</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Gambar
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="file"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="foto">
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
 
-                        <li class="nav-item ">
-                            <a class="nav-link " href="profile.html">
-                                <img class="img-profile" style="border-radius: 10px;" src="img/profil.jpeg">
-                                <span class="ml-2 d-none d-lg-inline small" style="color: white;">Tari
-                                    Admin</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-footer">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-secondary"
+                                                                        data-dismiss="modal">Tutup</button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-primary"
+                                                                        data-toggle="modal"
+                                                                        data-target="#suksesModal">
+                                                                        Simpan
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Manajemen Layanan Kebersihan</h1>
-                        <a href="tambahlayanankebersihan.html"
-                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Tambah Master Layanan
-                            Kebersihan</a>
-                    </div>
-                    <a href="layanankebersihan.html" class="btn btn-warning">Master Layanan Kebersihan</a>
-                    <a href="paketkebersihan.html" class="btn btn" style="background-color: wheat;color: black;">Paket
-                        Layanan Kebersihan</a>
-                    <br><br>
-                    <div class="card shadow mb-4">
-                        <div class="card-body">
-                           <div class="card" style="margin-left: 51%; width: 49%;">
-                                <div class="filter-container" style="padding: 1px;">
-                                    <img src="logo/filter.png" alt="Filter">
-                                    <select id="filterNama" onchange="filterTable()">
-                                        <option value="">Nama</option>
-                                        <option value="Pembersihan Ventilasi">Pembersihan Ventilasi</option>
-                                        <option value="Sapu Lantai">Sapu Lantai</option>
-                                        <!-- Tambahkan opsi lainnya jika diperlukan -->
-                                    </select>
-                                    <select id="filterDeskripsi" onchange="filterTable()">
-                                        <option value="">Deskripsi</option>
-                                        <option value="Layanan Pembersih">Layanan Pembersih</option>
-                                        <!-- Tambahkan opsi lainnya jika diperlukan -->
-                                    </select>
-                                    <select id="filterStatus" onchange="filterTable()">
-                                        <option value="">Status</option>
-                                        <option value="Aktif">Aktif</option>
-                                        <option value="Non-Aktif">Non-Aktif</option>
-                                        <!-- Tambahkan opsi lainnya jika diperlukan -->
-                                    </select>
-                                    <button onclick="resetFilters()">&#8634; Reset</button>
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-sm"
+                                                        data-toggle="modal"
+                                                        data-target="#exampleModal">
+                                                        <i
+                                                            class="bi bi-trash"></i>
+                                                    </button>
+                                                    <div class="modal fade"
+                                                        id="exampleModal"
+                                                        tabindex="-1"
+                                                        role="dialog"
+                                                        aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div
+                                                            class="modal-dialog"
+                                                            role="document">
+                                                            <div
+                                                                class="modal-content">
+                                                                <div
+                                                                    class="modal-header">
+                                                                    <h5
+                                                                        class="modal-title"
+                                                                        id="exampleModalLabel">
+                                                                        Konfirmasi</h5>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="close"
+                                                                        data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                        <span
+                                                                            aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body">
+                                                                    Apakah yakin
+                                                                    anda akan
+                                                                    menghapus
+                                                                    data ini?
+                                                                </div>
+                                                                <div
+                                                                    class="modal-footer">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-secondary"
+                                                                        data-dismiss="modal">Tutup</button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-danger"
+                                                                        data-toggle="modal"
+                                                                        data-target="#deleteModal">
+                                                                        Hapus
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>J1</td>
+                                                <td>Sapu Lantai</td>
+                                                <td>Layanan Pembersih</td>
+                                                <td>10.000</td>
+                                                <td
+                                                    style="color: green;">Aktif</td>
+                                                <td>Gambar_2.png</td>
+                                                <td>
+                                                    <button type="button"
+                                                        class="btn btn-primary btn-sm"
+                                                        data-toggle="modal"
+                                                        data-target="#updateModal"
+                                                        style="color: rgb(0, 85, 128);background-color: rgba(0, 255, 255, 0.307);">
+                                                        <i
+                                                            class="bi bi-pen"></i>
+                                                    </button>
+                                                    <div class="modal fade"
+                                                        id="updateModal"
+                                                        tabindex="-1"
+                                                        role="dialog"
+                                                        aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div
+                                                            class="modal-dialog"
+                                                            role="document">
+                                                            <div
+                                                                class="modal-content">
+                                                                <div
+                                                                    class="modal-header">
+                                                                    <h5
+                                                                        class="modal-title"
+                                                                        id="exampleModalLabel">
+                                                                        Update</h5>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="close"
+                                                                        data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                        <span
+                                                                            aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body">
+                                                                    <form
+                                                                        method="post"
+                                                                        enctype="multipart/form-data">
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Nama
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="nama_jasa"
+                                                                                placeholder>
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Deskripsi
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="deskripsi_jasa"
+                                                                                placeholder>
+                                                                        </div>
+
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Harga
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="text"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="harga_jasa"
+                                                                                placeholder>
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Pilih
+                                                                                Status
+                                                                                Jasa</label>
+                                                                            <select
+                                                                                class="form-control"
+                                                                                name="status_jasa">
+                                                                                <option
+                                                                                    value>Pilih
+                                                                                    Status
+                                                                                    Jasa</option>
+                                                                                <option
+                                                                                    value="aktif">Aktif</option>
+                                                                                <option
+                                                                                    value="non_aktif">Non
+                                                                                    -
+                                                                                    Aktif</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+                                                                            <label>Gambar
+                                                                                Jasa</label>
+                                                                            <input
+                                                                                type="file"
+                                                                                required
+                                                                                class="form-control"
+                                                                                name="foto">
+                                                                        </div>
+                                                                        <div
+                                                                            class="form-group">
+
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-footer">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-secondary"
+                                                                        data-dismiss="modal">Hapus</button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-primary"
+                                                                        data-toggle="modal"
+                                                                        data-target="#suksesModal">
+                                                                        Simpan
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <button type="button"
+                                                        class="btn btn-danger btn-sm"
+                                                        data-toggle="modal"
+                                                        data-target="#exampleModal">
+                                                        <i
+                                                            class="bi bi-trash"></i>
+                                                    </button>
+                                                    <div class="modal fade"
+                                                        id="exampleModal"
+                                                        tabindex="-1"
+                                                        role="dialog"
+                                                        aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div
+                                                            class="modal-dialog"
+                                                            role="document">
+                                                            <div
+                                                                class="modal-content">
+                                                                <div
+                                                                    class="modal-header">
+                                                                    <h5
+                                                                        class="modal-title"
+                                                                        id="exampleModalLabel">
+                                                                        Konfirmasi</h5>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="close"
+                                                                        data-dismiss="modal"
+                                                                        aria-label="Close">
+                                                                        <span
+                                                                            aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div
+                                                                    class="modal-body">
+                                                                    Apakah yakin
+                                                                    anda akan
+                                                                    menghapus
+                                                                    data ini?
+                                                                </div>
+                                                                <div
+                                                                    class="modal-footer">
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-secondary"
+                                                                        data-dismiss="modal">Tutup</button>
+                                                                    <button
+                                                                        type="button"
+                                                                        class="btn btn-danger"
+                                                                        data-toggle="modal"
+                                                                        data-target="#deleteModal">
+                                                                        Hapus
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="table-responsive" style="padding-top: 2%;">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Nama Jasa</th>
-                                            <th>Deskripsi Jasa</th>
-                                            <th>Harga Jasa</th>
-                                            <th>Status Jasa</th>
-                                            <th>Gambar Jasa</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>J1</td>
-                                            <td>Pembersihan Ventilasi</td>
-                                            <td>Layanan Pembersih</td>
-                                            <td>10.000</td>
-                                            <td style="color: green;">Aktif</td>
-                                            <td>Gambar_1.png</td>
-                                            <td>
-                                                <button class="btn btn btn-sm"
-                                                    style="color: rgb(0, 85, 128);background-color: rgba(0, 255, 255, 0.307);">Update</button>
-                                                │ <button class="btn btn btn-sm"
-                                                    style="color: rgb(128, 30, 0);background-color: rgba(255, 0, 0, 0.307);">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>J1</td>
-                                            <td>Sapu Lantai</td>
-                                            <td>Layanan Pembersih</td>
-                                            <td>10.000</td>
-                                            <td style="color: green;">Aktif</td>
-                                            <td>Gambar_2.png</td>
-                                            <td>
-                                                <button class="btn btn btn-sm"
-                                                    style="color: rgb(0, 85, 128);background-color: rgba(0, 255, 255, 0.307);">Update</button>
-                                                │ <button class="btn btn btn-sm"
-                                                    style="color: rgb(128, 30, 0);background-color: rgba(255, 0, 0, 0.307);">Delete</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Konfirmasi</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Apakah anda yakin ingin keluar ?</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batalkan</button>
-                    <a class="btn btn-primary" href="index.html">Ya, Keluar</a>
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"
+                            id="exampleModalLabel">Konfirmasi</h5>
+                        <button class="close" type="button" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Apakah anda yakin ingin keluar
+                        ?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button"
+                            data-dismiss="modal">Batalkan</button>
+                        <a class="btn btn-primary" href="index.html">Ya,
+                            Keluar</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script>
+
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
+            aria-labelledby="suksesModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--  -->
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <!-- Ganti tanda centang dengan GIF -->
+                        <img src="img/card7.png" alt="Sukses"
+                            style="width: 100px; height: 100px;">
+                        <br><br>
+                        <p>Sukses Terhapus</p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a href="layanankebersihan.html"
+                            class="btn btn-primary">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="suksesModal" tabindex="-1" role="dialog"
+            aria-labelledby="suksesModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!--  -->
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <!-- Ganti tanda centang dengan GIF -->
+                        <img src="img/card6.png" alt="Sukses"
+                            style="width: 100px; height: 100px;">
+                        <br><br>
+                        <p>Sukses Tersimpan</p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <a href="layanankebersihan.html"
+                            class="btn btn-primary">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
         function filterTable() {
             var filterNama = document.getElementById('filterNama').value.toLowerCase();
             var filterDeskripsi = document.getElementById('filterDeskripsi').value.toLowerCase();
@@ -381,13 +909,14 @@
         document.getElementById('filterDeskripsi').addEventListener('change', filterTable);
         document.getElementById('filterStatus').addEventListener('change', filterTable);
     </script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/sb-admin-2.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="js/demo/datatables-demo.js"></script>
-</body>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="js/sb-admin-2.min.js"></script>
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script
+            src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <script src="js/demo/datatables-demo.js"></script>
+    </body>
 
 </html>

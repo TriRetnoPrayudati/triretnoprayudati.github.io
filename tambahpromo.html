@@ -155,7 +155,7 @@
                     <img src="logo/gear.png">
                     <span>Pengaturan</span></a>
             </li>
-            <li class="nav-item" style="padding-top: 500px;">
+            <li class="nav-item" >
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
                     <img src="logo/keluar.png">
                     <span>Keluar</span></a>
@@ -291,14 +291,22 @@
                                             <label>Kode Diskon</label>
                                             <input type="text" class="form-control" name="" placeholder="">
                                         </div>
-                                        <div class="form-group">
-                                            <label>Layanan Terkait</label>
-                                            <input type="text" class="form-control" name="" placeholder="">
-                                        </div>
+                                    
                                         <div class="form-group">
                                             <label>Masa Berlaku</label>
-                                            <input type="text" class="form-control" name="" placeholder="">
+                                            <div class="d-flex">
+                                                <div class="mr-2">
+                                                    <label for="startDate">Dari Tanggal:</label>
+                                                    <input type="date" class="form-control" id="startDate" name="startDate" placeholder="">
+                                                </div>
+                                                <div>
+                                                    <label for="endDate">Sampai Tanggal:</label>
+                                                    <input type="date" class="form-control" id="endDate" name="endDate" placeholder="">
+                                                </div>
+                                            </div>
                                         </div>
+                                        
+                                        
                                         <div class="form-group">
                                             <label>Paket Layanan</label>
                                             <div class="dropdown">
@@ -308,16 +316,16 @@
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                     <label class="dropdown-item">
-                                                        <input type="checkbox" id="daily-cleaning"> Daily Cleaning
+                                                        <input type="checkbox" id="daily-cleaning"> Essential Clean
                                                     </label>
                                                     <label class="dropdown-item">
-                                                        <input type="checkbox" id="deep-cleaning"> Deep Cleaning
-                                                    </label>
+                                                        <input type="checkbox" id="deep-cleaning"> Intensive Clean
+                                                    </label> 
                                         
                                                     <div class="dropdown-divider"></div>
                                                     <div class="dropdown-submenu">
                                                         <button class="dropdown-item dropdown-toggle" type="button" id="customizeDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            Customize
+                                                            Flexible Clean
                                                         </button>
                                                         <div class="dropdown-menu" aria-labelledby="customizeDropdown">
                                                             <label class="dropdown-item">

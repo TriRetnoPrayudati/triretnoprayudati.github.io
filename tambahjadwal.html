@@ -88,7 +88,7 @@
                     <img src="logo/gear.png">
                     <span>Pengaturan</span></a>
             </li>
-            <li class="nav-item" style="padding-top: 500px;">
+            <li class="nav-item" >
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
                     <img src="logo/keluar.png">
                     <span>Keluar</span></a>
@@ -211,6 +211,18 @@
                                         <div class="row">
                                             
                                             <div class="col-xl-4 col-md-6 mb-4">
+                                                <label>Hari</label>
+                                               <select class="form-control">
+                                                <option value="Senin">Senin</option>
+                                                <option value="Selasa">Selasa</option>
+                                                <option value="Rabu">Rabu</option>
+                                                <option value="Kamis">Kamis</option>
+                                                <option value="Jumat">Jumat</option>
+                                                <option value="Sabtu">Sabtu</option>
+                                                <option value="Minggu">Minggu</option>
+                                               </select>
+                                            </div>
+                                            <div class="col-xl-4 col-md-6 mb-4">
                                                 <label>Tanggal</label>
                                                 <input type="date" required class="form-control" name="" placeholder="">
                                             </div>
@@ -225,9 +237,9 @@
                                                 <label>Jam Tutup</label>
                                                 <input type="time" required class="form-control" name="" placeholder="">
                                             </div>
-                                            <div class="col-xl-12 col-md-6 mb-4">
+                                            <div class="col-xl-8 col-md-6 mb-4">
                                                 <label>Catatan</label>
-                                                <input type="text" required class="form-control" name="" placeholder="">
+                                                <textarea class="form-control" name="" placeholder=""></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -288,7 +300,7 @@
                     <p>Sukses Tersimpan</p>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <a href="operasional.html" class="btn btn-primary">OK</a>
+                    <a href="jadwaloperasional.html" class="btn btn-primary">OK</a>
                 </div>
             </div>
         </div>
